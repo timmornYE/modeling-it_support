@@ -18,6 +18,12 @@
     <h1>Select type</h1>
     <h:form id="submitForm">
       <h:panelGrid columns="2">
+        
+        <p>
+          <label for="teachercode">Lehrer Code</label>
+          <!-- create process variables using the processVariables map. -->
+          <h:inputText id="teachercode" value="#{processVariables['teachercode']}" required="true" />
+        </p>
         <p>
           <label for="suptype">Support Type</label>
           <h:selectOneMenu id="suptype" value="#{processVariables['suptype']}">
@@ -26,9 +32,9 @@
           </h:selectOneMenu>
         </p>
         <p>
-          <label for="teachercode">Lehrer Code</label>
+          <label for="supDescription">Short Error Description</label>
           <!-- create process variables using the processVariables map. -->
-          <h:inputText id="teachercode" value="#{processVariables['teachercode']}" required="true" />
+          <h:inputTextarea id="supDescription" value="#{processVariables['supDescription']}" required="true" />
         </p>
         
       </h:panelGrid>

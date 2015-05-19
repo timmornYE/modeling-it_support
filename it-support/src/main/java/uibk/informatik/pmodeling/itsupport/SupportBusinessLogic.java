@@ -33,6 +33,7 @@ public class SupportBusinessLogic {
 	    // Set order attributes
 	    ticketEntity.setTeachercode((String) variables.get("teachercode"));
 	    ticketEntity.setSuptype((String) variables.get("suptype"));
+	    ticketEntity.setSupDescription((String) variables.get("supDescription"));
 	 
 	    /*
 	      Persist order instance and flush. After the flush the

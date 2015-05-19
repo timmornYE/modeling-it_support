@@ -19,11 +19,16 @@ xmlns:f="http://java.sun.com/jsf/core">
   <h1>Ticket:</h1>
   <p>Ticket ID: #{registerTicketController.ticketEntity.id}</p>
   <p>Customer: #{registerTicketController.ticketEntity.teachercode}</p>
-  <p>Pizza: #{registerTicketController.ticketEntity.suptype}</p>
+  <p>Support Type: #{registerTicketController.ticketEntity.suptype}</p>
+  <p>Description: #{registerTicketController.ticketEntity.supDescription}</p>
   <h:form id="submitForm">
-    <h:outputLabel>Register for Ticket?</h:outputLabel>
-    <h:selectBooleanCheckbox value="#{registerTicketController.ticketEntity.supporter}"/><br/>
+    
+    <p>
+      <label for="supportercode">Enter Supporter Code</label>
+      <h:inputText id="supportercode" value="#{registerTicketController.ticketEntity.supportercode}" required="true" />
+    </p>
     <h:commandButton id="submit_button" value="Approve Order" action="#{registerTicketController.submitForm()}" />
+    
   </h:form>
 </h:body>
 </f:view>
