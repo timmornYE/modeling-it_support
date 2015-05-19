@@ -39,7 +39,7 @@
       <artifactId>camunda-ejb-client</artifactId>
     </dependency>
  
-    <!-- Java EE 6 Specification -->
+    <!-- Java EE 6 Specifications -->
     <dependency>
       <groupId>org.jboss.spec</groupId>
       <artifactId>jboss-javaee-web-6.0</artifactId>
