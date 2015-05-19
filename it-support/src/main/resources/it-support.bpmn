@@ -9,7 +9,7 @@
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:startEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="ServiceTask_1"/>
-    <bpmn2:userTask id="UserTask_1" name="Assign Worker">
+    <bpmn2:userTask id="UserTask_1" camunda:formKey="app:registerticket.jsf" name="Register Worker">
       <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
     </bpmn2:userTask>

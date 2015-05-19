@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+ 
+<f:view>
+<f:metadata>
+  <!-- Start working on a task. Task Id is read internally from
+       request parameters and cached in the CDI conversation scope.
+  -->
+ 
+  <f:event type="preRenderView" listener="#{camundaTaskForm.startTaskForm()}" />
+</f:metadata>
+<h:head>
+  <title>Register for Ticket</title>
+</h:head>
+<h:body>
+  <h1>Ticket:</h1>
+  <p>Ticket ID: #{registerTicketController.ticketEntity.id}</p>
+  <p>Customer: #{registerTicketController.ticketEntity.teachercode}</p>
+  <p>Pizza: #{registerTicketController.ticketEntity.suptype}</p>
+  <h:form id="submitForm">
+    <h:outputLabel>Register for Ticket?</h:outputLabel>
+    <h:selectBooleanCheckbox value="#{registerTicketController.ticketEntity.supporter}"/><br/>
+    <h:commandButton id="submit_button" value="Approve Order" action="#{registerTicketController.submitForm()}" />
+  </h:form>
+</h:body>
+</f:view>
+</html>

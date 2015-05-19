@@ -21,7 +21,8 @@ public class TicketEntity implements Serializable {
 	protected String teachercode;
 	protected String suptype;
 	
-	protected String supporter;
+	//@TODO: Only for testing; should be String with supporter Name
+	protected Boolean supporter;
 
 	public Long getId() {
 		return id;
@@ -55,11 +56,11 @@ public class TicketEntity implements Serializable {
 		this.suptype = suptype;
 	}
 
-	public String getSupporter() {
+	public Boolean getSupporter() {
 		return supporter;
 	}
 
-	public void setSupporter(String supporter) {
+	public void setSupporter(Boolean supporter) {
 		this.supporter = supporter;
 	}
 
