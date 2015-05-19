@@ -9,12 +9,18 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+
 import java.io.IOException;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 @Stateless
 @Named
 public class SupportBusinessLogic {
+	
+	private static Logger LOGGER = Logger.getLogger(SupportBusinessLogic.class.getName());
+	
 	// Inject the entity manager
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -69,5 +75,10 @@ public class SupportBusinessLogic {
 	      throw new RuntimeException("Cannot complete task", e);
 	    }
 	}
+	
+	public void sendRequestForSupporter(DelegateExecution delegateExecution) {
+	    TicketEntity ticket = getTicket((Long) delegateExecution.getVariable("orderId"));
+	    LOGGER.log(Level.INFO, "\n\n\nSending Email:\nTeacher with the name {0} has created a ticket with number {1} and request support for type {2}\n\n\n", new String[]{ticket.getTeachercode(), String.valueOf(ticket.getId()), ticket.getSuptype()});
+	  }
 
 }
