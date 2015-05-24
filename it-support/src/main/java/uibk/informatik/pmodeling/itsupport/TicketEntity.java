@@ -21,6 +21,8 @@ public class TicketEntity implements Serializable {
 	protected String teachercode;
 	protected String suptype;
 	protected String supDescription;
+	protected String teachercamundaid;
+	protected String supportercamundaid;
 	
 	//@TODO: Only for testing; should be String with supporter Name
 	protected String supportercode;
@@ -73,6 +75,22 @@ public class TicketEntity implements Serializable {
 
 	public void setSupDescription(String supDescription) {
 		this.supDescription = supDescription;
+	}
+
+	public String getTeachercamundaid() {
+		return teachercamundaid;
+	}
+
+	public void setTeachercamundaid(String teachercamundaid) {
+		this.teachercamundaid = teachercamundaid;
+	}
+
+	public String getSupportercamundaid() {
+		return supportercamundaid;
+	}
+
+	public void setSupportercamundaid(String supportercamundaid) {
+		this.supportercamundaid = supportercamundaid;
 	}
 
 	

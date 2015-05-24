@@ -1,7 +1,9 @@
 package uibk.informatik.pmodeling.itsupport;
 
+import org.camunda.bpm.engine.IdentityService;
 import org.camunda.bpm.engine.cdi.jsf.TaskForm;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
+import org.camunda.bpm.engine.impl.identity.Authentication;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -30,6 +32,10 @@ public class SupportBusinessLogic {
 	private TaskForm taskForm;
 	
 	public void persistSupportRequest(DelegateExecution delegateExecution) {
+		// Get Camunda Authentication Information
+		IdentityService identityService = delegateExecution.getProcessEngineServices().getIdentityService();
+		Authentication authentication = identityService.getCurrentAuthentication();
+				
 		// Create new order instance
 		TicketEntity ticketEntity = new TicketEntity();
 	 
@@ -40,6 +46,7 @@ public class SupportBusinessLogic {
 	    ticketEntity.setTeachercode((String) variables.get("teachercode"));
 	    ticketEntity.setSuptype((String) variables.get("suptype"));
 	    ticketEntity.setSupDescription((String) variables.get("supDescription"));
+	    //ticketEntity.setSupportercamundaid(authentication.getUserId());
 	 
 	    /*
 	      Persist order instance and flush. After the flush the

@@ -25,6 +25,11 @@
           <h:inputText id="teachercode" value="#{processVariables['teachercode']}" required="true" />
         </p>
         <p>
+          <label for="userId">Lehrer Code</label>
+          <!-- create process variables using the processVariables map. -->
+          <h:inputText id="userId" value="#{supportRequestController.userId}" required="true" />
+        </p>
+        <p>
           <label for="suptype">Support Type</label>
           <h:selectOneMenu id="suptype" value="#{processVariables['suptype']}">
               <f:selectItem itemValue="Hardware" itemLabel="Hardware"/>
