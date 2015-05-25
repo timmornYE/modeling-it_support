@@ -1,9 +1,7 @@
 package uibk.informatik.pmodeling.itsupport;
 
-import org.camunda.bpm.engine.IdentityService;
 import org.camunda.bpm.engine.cdi.jsf.TaskForm;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.impl.identity.Authentication;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -31,11 +29,7 @@ public class SupportBusinessLogic {
 	@Inject
 	private TaskForm taskForm;
 	
-	public void persistSupportRequest(DelegateExecution delegateExecution) {
-		// Get Camunda Authentication Information
-		IdentityService identityService = delegateExecution.getProcessEngineServices().getIdentityService();
-		Authentication authentication = identityService.getCurrentAuthentication();
-				
+	public void persistSupportRequest(DelegateExecution delegateExecution) {						
 		// Create new order instance
 		TicketEntity ticketEntity = new TicketEntity();
 	 
