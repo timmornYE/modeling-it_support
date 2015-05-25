@@ -14,7 +14,7 @@ import java.io.Serializable;
  
 @Named
 @ConversationScoped
-public class RegisterTicketController implements Serializable {
+public class RegisterTicketController implements Serializable { 
 	
 	private static  final long serialVersionUID = 1L;
 	 
